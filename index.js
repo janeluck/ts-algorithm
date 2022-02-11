@@ -7,14 +7,17 @@ function threeSum(nums) {
     });
     for (var i = 0; nums[i] <= 0; i++) {
         if (i === 0 || nums[i] !== nums[i - 1]) {
+            var k = nums.length - 1;
             for (var j = i + 1; j < nums.length; j++) {
                 if ((j === i + 1) || nums[j] !== nums[j - 1]) {
-                    for (var k = j + 1; k < nums.length; k++) {
-                        if ((k === j + 1) || nums[k] !== nums[k - 1]) {
-                            if (nums[i] + nums[j] + nums[k] === 0) {
-                                result.push([nums[i], nums[j], nums[k]]);
-                            }
-                        }
+                    while (j < k || (nums[j] + nums[k] > -nums[i])) {
+                        k = k - 1;
+                    }
+                    if (j === k) {
+                        break;
+                    }
+                    if (nums[j] + nums[k] === -nums[i]) {
+                        result.push([nums[i], nums[j], nums[k]]);
                     }
                 }
             }
