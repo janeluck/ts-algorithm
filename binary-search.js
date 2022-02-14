@@ -1,7 +1,8 @@
+"use strict";
 function search(nums, target) {
-    var low = 0, high = nums.length - 1;
+    let low = 0, high = nums.length - 1;
     while (low <= high) {
-        var mid = Math.floor((high + low) / 2);
+        const mid = Math.floor((high + low) / 2);
         if (nums[mid] === target)
             return mid;
         if (nums[mid] > target) {

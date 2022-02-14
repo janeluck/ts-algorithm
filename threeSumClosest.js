@@ -1,3 +1,4 @@
+"use strict";
 function threeSumClosest(nums, target) {
     if (nums.length < 4) {
         return nums.reduce(function (a, b) {
@@ -7,17 +8,17 @@ function threeSumClosest(nums, target) {
     nums.sort(function (a, b) {
         return a - b;
     });
-    var min = Infinity;
+    let min = Infinity;
     function update(cur) {
         if (Math.abs(cur - target) < Math.abs(min - target)) {
             min = cur;
         }
     }
-    for (var i = 0; i < nums.length; i++) {
+    for (let i = 0; i < nums.length; i++) {
         if (i === 0 || nums[i] !== nums[i - 1]) {
-            var k = nums.length - 1, j = i + 1;
+            let k = nums.length - 1, j = i + 1;
             while (j < k) {
-                var sum = nums[i] + nums[j] + nums[k];
+                const sum = nums[i] + nums[j] + nums[k];
                 if (sum === target) {
                     return sum;
                 }

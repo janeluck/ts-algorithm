@@ -1,12 +1,13 @@
+"use strict";
 function sortedSquares(nums) {
-    var left = [];
-    var i = 0;
+    const left = [];
+    let i = 0;
     for (; nums[i] < 0; i++) {
         left.unshift(0 - nums[i]);
     }
-    var right = nums.slice(i);
-    var result = [];
-    var m = 0, n = 0;
+    const right = nums.slice(i);
+    const result = [];
+    let m = 0, n = 0;
     while (m < i && n < nums.length - i) {
         if (left[m] < right[n]) {
             result.push(left[m]);
@@ -18,11 +19,11 @@ function sortedSquares(nums) {
         }
     }
     if (m < i) {
-        result.push.apply(result, left.slice(m));
+        result.push(...left.slice(m));
     }
     if (n < nums.length - i) {
-        result.push.apply(result, right.slice(n));
+        result.push(...right.slice(n));
     }
-    return result.map(function (item) { return item * item; });
+    return result.map(item => item * item);
 }
 ;

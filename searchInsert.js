@@ -1,5 +1,6 @@
+"use strict";
 function searchInsert(nums, target) {
-    var low = 0, high = nums.length - 1, cur;
+    let low = 0, high = nums.length - 1, cur;
     while (low <= high) {
         cur = Math.floor((low + high) / 2);
         if (nums[cur] === target)

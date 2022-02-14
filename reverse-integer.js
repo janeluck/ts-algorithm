@@ -1,11 +1,12 @@
+"use strict";
 /*
 * 整数反转
 链接：https://leetcode-cn.com/problems/reverse-integer
 * */
 function reverse(x) {
-    var max = Math.pow(2, 31) - 1;
-    var maxLimit = Math.floor(max / 10);
-    var i = x, result = 0;
+    const max = Math.pow(2, 31) - 1;
+    const maxLimit = Math.floor(max / 10);
+    let i = x, result = 0;
     while (i != 0) {
         if (result > maxLimit || result < 0 - maxLimit) {
             return 0;
