@@ -9,3 +9,12 @@ function rotate(nums, k) {
     }
 }
 ;
+function rotate1(nums, k) {
+    nums = nums.reverse();
+    const index = nums.length - k % nums.length;
+    const first = nums.slice(0, index).reverse();
+    const second = nums.slice(index).reverse();
+    nums = first.concat(second);
+    console.log(nums);
+}
+;
